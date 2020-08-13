@@ -135,11 +135,21 @@ $('html,body').animate({scrollTop:
 0 }, 888 );
 }
 </script>
+
+<div style="background:rgba(51, 51, 51, 0.3);height:52px;width:0%;position:fixed;top:0px;left:0px;" id="reading-bar"></div>
+<script>
+var content_offtop = $('body,html').offset().top; var content_height = $('.bg').innerHeight(); $(window).scroll(function () {
+if (($(this).scrollTop() > content_offtop)) {
+if (($(this).scrollTop() - content_offtop) <= content_height) { this.reading_p = Math.round(($(this).scrollTop() - content_offtop) /
+content_height * 100); } else { this.reading_p = 100; }
+} else { this.reading_p = 0; }
+$('#reading-bar').stop().animate({width: this.reading_p + '%' },222); });
+</script>
+
 <div class="top">
 <a href="javascript:gotop()">
 <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwcHQiIGhlaWdodD0iMjAwcHQiIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB2ZXJzaW9uPSIxLjEiPg08ZyBpZD0ic3VyZmFjZTEiPg08cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgc3R5bGU9ImZpbGw6cmdiKDc4LjQzMTM3MyUsOTkuMjE1Njg2JSw5Ni4wNzg0MzElKTtmaWxsLW9wYWNpdHk6MDtzdHJva2U6bm9uZTsiLz4NPHBhdGggc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYigxNy4yNTQ5MDIlLDcxLjc2NDcwNiUsODMuMTM3MjU1JSk7ZmlsbC1vcGFjaXR5OjE7IiBkPSJNIDQxLjk0MTQwNiA0MC4wOTc2NTYgQyAzNS4yNDYwOTQgNDAuMDk3NjU2IDI5LjgyMDMxMiA0NS41MjM0MzggMjkuODIwMzEyIDUyLjIxODc1IEwgMjkuODIwMzEyIDE0Ny43OTI5NjkgQyAyOS44MjAzMTIgMTU0LjQ4ODI4MSAzNS4yNDYwOTQgMTU5LjkxNDA2MiA0MS45NDE0MDYgMTU5LjkxNDA2MiBDIDQ4LjYzMjgxMiAxNTkuOTE0MDYyIDU0LjA2MjUgMTU0LjQ4ODI4MSA1NC4wNjI1IDE0Ny43OTI5NjkgTCA1NC4wNjI1IDg4Ljc2MTcxOSBMIDg5Ljg3ODkwNiAxMzYuMTc5Njg4IEMgOTIuMzU5Mzc1IDEzOS40NjA5MzggOTYuMTg3NSAxNDEuMTI1IDEwMC4wMDc4MTIgMTQwLjk4NDM3NSBDIDEwMy44MjgxMjUgMTQxLjEyNSAxMDcuNjU2MjUgMTM5LjQ2MDkzOCAxMTAuMTMyODEyIDEzNi4xNzk2ODggTCAxNDUuOTUzMTI1IDg4Ljc2MTcxOSBMIDE0NS45NTMxMjUgMTQ3Ljc5Mjk2OSBDIDE0NS45NTMxMjUgMTU0LjQ4ODI4MSAxNTEuMzc4OTA2IDE1OS45MTQwNjIgMTU4LjA3MDMxMiAxNTkuOTE0MDYyIEMgMTY0Ljc2NTYyNSAxNTkuOTE0MDYyIDE3MC4xOTE0MDYgMTU0LjQ4ODI4MSAxNzAuMTkxNDA2IDE0Ny43OTI5NjkgTCAxNzAuMTkxNDA2IDUyLjIxODc1IEMgMTcwLjE5MTQwNiA0NS41MjM0MzggMTY0Ljc2NTYyNSA0MC4wOTc2NTYgMTU4LjA3MDMxMiA0MC4wOTc2NTYgQyAxNTMuMjU3ODEyIDQwLjA5NzY1NiAxNDkuMTAxNTYyIDQyLjkwMjM0NCAxNDcuMTQ0NTMxIDQ2Ljk2ODc1IEwgMTAwLjAwNzgxMiAxMDkuMzcxMDk0IEwgNTIuODY3MTg4IDQ2Ljk2ODc1IEMgNTAuOTEwMTU2IDQyLjkwMjM0NCA0Ni43NTM5MDYgNDAuMDk3NjU2IDQxLjk0MTQwNiA0MC4wOTc2NTYgWiBNIDQxLjk0MTQwNiA0MC4wOTc2NTYgIi8+DTwvZz4NPC9zdmc+DQ==" alt="M" title="M" style="height: calc(100% - 4px); position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"></a></div>
 <div class="top-line"></div>
-
 <a href="javascript:goto('int','60')" class="gotop" style="color:#333333;" id="gotop">回目錄</a>
 <script>
 $(window).scroll(function() {
