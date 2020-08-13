@@ -1,6 +1,7 @@
 <meta charset="UTF-8">
 <title>每日一學APP</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Sans+TC:wght@300;400&display=swap');
@@ -10,7 +11,7 @@
 background: rgb(6,238,234);
 background: linear-gradient(155deg, rgba(6,238,234,1) 0%, rgba(0,159,191,1) 32%, rgba(14,108,150,1) 70%, rgba(36,110,130,1) 96%);
 width: calc(100% - 50px);
-height:1000%;
+height:auto;
 position:absolute;
 top:0px;
 left:0px;
@@ -21,19 +22,129 @@ font-family: 'Noto Sans TC', sans-serif;
 line-height: 35px;
 letter-spacing: 3px;
 padding:25px;
+caret-color:rgba(255, 255, 255, 0.6);
 }
 .top {position:fixed;top:0px;left:0px;width:100%;height:52px;background: rgba(250 , 250, 250, 0.8);-webkit-backdrop-filter: blur(8px);backdrop-filter: blur(8px);}
 
-.top-line {position:fixed;top:52px;left:0px;width:100%;height:1px;background: rgba(180 , 180, 180, 0.8);-webkit-backdrop-filter: blur(15px);backdrop-filter: blur(15px);}
+.gotop {position:fixed;bottom:25px;left:50%;width:auto;height:auto;background: rgba(250 , 250, 250, 0.8);-webkit-backdrop-filter: blur(8px);backdrop-filter: blur(8px);padding:3px 12px;border-radius:999em;transform:translate(-50%,-0%);font-size:25px;font-family: 'Noto Sans JP', sans-serif;font-family: 'Noto Sans TC', sans-serif;}
 
+.top-line {position:fixed;top:52px;left:0px;width:100%;height:1px;background: rgba(180 , 180, 180, 0.8);-webkit-backdrop-filter: blur(15px);backdrop-filter: blur(15px);}
+a {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration: none;color:#ffffff;}
+.img {width:100%;border-radius:15px;}
+
+.button {width:auto;height:auto;background: rgba(250 , 250, 250, 0.9);-webkit-backdrop-filter: blur(8px);backdrop-filter: blur(8px);padding:3px 12px;border-radius:999em;font-size:25px;font-family: 'Noto Sans JP', sans-serif;font-family: 'Noto Sans TC', sans-serif;color:#333333;}
 </style>
 <div class="bg">
 <div style="background:rgba(0, 0, 0, 0);width:100%;height:60px;"></div>
 <span style="word-break: break-all;">
-<center><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/aRIBTDhbZCEy5lrB8X0EoUQBCxnB8QYE.png" style="width:100%;border-radius:15px;"></center>
-<center><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></center>
+<center><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/aRIBTDhbZCEy5lrB8X0EoUQBCxnB8QYE.png" style="width:100%;border-radius:15px;" id="headimage"></center>
+
+<center><a href="javascript:goto('int','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+<p id="int">
+<h3>目錄</h3>
+<li><a href="javascript:goto('dd','60')" >簡介</a></li>
+<li><a href="javascript:goto('home','60')" >首頁</a></li>
+<li><a href="javascript:goto('gg','60')" >公告</a></li>
+<li><a href="javascript:goto('tv','60')" >TV</a></li>
+<li><a href="javascript:goto('search','60')" >搜尋</a></li>
+<li><a href="javascript:goto('tools','60')" >小工具</a></li>
+<li><a href="javascript:goto('menu','60')" >選單</a></li>
+<li><a href="javascript:goto('feedback','60')" >意見回饋</a></li>
+<li><a href="javascript:goto('setting','60')" >設定</a></li>
+<li><a href="javascript:goto('useapp','60')" >使用APP</a></li>
+<li><a href="javascript:goto('moreint','60')" >更多資訊</a></li>
+</p>
+<p id="dd" >
+<h3>簡介</h3>
+APP包含了搜尋、查看公告、觀看影片和多種小工具⋯⋯等多種豐富功能！
+<center><a href="javascript:goto('home','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+<p id="home">
+<h3>首頁</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/E0BD4710-DAA5-4CEB-87E9-7FAA96114F96.jpeg" class="img">
+<center><a href="javascript:goto('gg','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+
+<p id="gg">
+<h3>公告</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/3F30AB88-593B-4CB9-8D5D-1C072A205656.jpeg" class="img">
+<center><a href="javascript:goto('tv','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+
+<p id="tv">
+<h3>TV</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/C4931C5A-B92E-469A-A21F-9D41F5AFBDD2.jpeg" class="img">
+<center><a href="javascript:goto('search','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+
+<p id="search">
+<h3>搜尋</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/6FEDE53D-C11E-414A-BAAA-28B8630C561F.jpeg" class="img">
+<center><a href="javascript:goto('tools','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+
+<p id="tools">
+<h3>小工具</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/B82092AD-FB23-44B4-9CD0-48270D0A93F2.jpeg" class="img">
+<center><a href="javascript:goto('menu','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+
+<p id="menu">
+<h3>選單</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/DF086AF9-ABAA-4CE8-BD1B-A375BB2EC8E1.jpeg" class="img">
+<center><a href="javascript:goto('feedback','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+
+<p id="feedback">
+<h3>意見回饋</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/6E2C7AA1-651C-4654-AB85-FEE869C3540E.jpeg" class="img">
+<center><a href="javascript:goto('setting','60')" style="outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);"><img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/LQCoGJFPYiZgJ5HCEMhC0lPFH1YkqBqU.svg" style="height:60px;"></a></center>
+</p>
+
+<p id="setting">
+<h3>設定</h3>
+<img src="https://erichsia7.github.io/WRCcJtgHaTrJpTom6j9QNeoWdd759CWY/img/5E18B296-114E-407B-81DB-3B632E8FAA62.jpeg" class="img">
+</p>
+
+<p id="useapp">
+<h3>使用APP</h3>
+<a href="https://meiriyixue-web-app.blogspot.com/p/app.html" class="button">開啟APP</a>
+<a href="https://line.me/R/app/1654386969-OBlo45ve" class="button">在LINE中開啟APP</a>
+</p>
+
+<p id="moreint">
+<h3>更多資訊</h3>
+<h5>APPのinstagram</h4>
+<a href="https://bit.ly/IG-meiriyixue-app" class="button">追蹤</a>
+<h5>聯絡每日一學</h5>
+<a href="https://bit.ly/gmail-meiriyixue" class="button">電子郵件</a>
+</p>
   </span>
 </div>
+
+<script>
+function goto(id,t) {
+$('html,body').animate({scrollTop:
+$('#' + id ).offset().top - t }, 888 );
+}
+function gotop() {
+$('html,body').animate({scrollTop:
+0 }, 888 );
+}
+</script>
 <div class="top">
-<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwcHQiIGhlaWdodD0iMjAwcHQiIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB2ZXJzaW9uPSIxLjEiPg08ZyBpZD0ic3VyZmFjZTEiPg08cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgc3R5bGU9ImZpbGw6cmdiKDc4LjQzMTM3MyUsOTkuMjE1Njg2JSw5Ni4wNzg0MzElKTtmaWxsLW9wYWNpdHk6MDtzdHJva2U6bm9uZTsiLz4NPHBhdGggc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYigxNy4yNTQ5MDIlLDcxLjc2NDcwNiUsODMuMTM3MjU1JSk7ZmlsbC1vcGFjaXR5OjE7IiBkPSJNIDQxLjk0MTQwNiA0MC4wOTc2NTYgQyAzNS4yNDYwOTQgNDAuMDk3NjU2IDI5LjgyMDMxMiA0NS41MjM0MzggMjkuODIwMzEyIDUyLjIxODc1IEwgMjkuODIwMzEyIDE0Ny43OTI5NjkgQyAyOS44MjAzMTIgMTU0LjQ4ODI4MSAzNS4yNDYwOTQgMTU5LjkxNDA2MiA0MS45NDE0MDYgMTU5LjkxNDA2MiBDIDQ4LjYzMjgxMiAxNTkuOTE0MDYyIDU0LjA2MjUgMTU0LjQ4ODI4MSA1NC4wNjI1IDE0Ny43OTI5NjkgTCA1NC4wNjI1IDg4Ljc2MTcxOSBMIDg5Ljg3ODkwNiAxMzYuMTc5Njg4IEMgOTIuMzU5Mzc1IDEzOS40NjA5MzggOTYuMTg3NSAxNDEuMTI1IDEwMC4wMDc4MTIgMTQwLjk4NDM3NSBDIDEwMy44MjgxMjUgMTQxLjEyNSAxMDcuNjU2MjUgMTM5LjQ2MDkzOCAxMTAuMTMyODEyIDEzNi4xNzk2ODggTCAxNDUuOTUzMTI1IDg4Ljc2MTcxOSBMIDE0NS45NTMxMjUgMTQ3Ljc5Mjk2OSBDIDE0NS45NTMxMjUgMTU0LjQ4ODI4MSAxNTEuMzc4OTA2IDE1OS45MTQwNjIgMTU4LjA3MDMxMiAxNTkuOTE0MDYyIEMgMTY0Ljc2NTYyNSAxNTkuOTE0MDYyIDE3MC4xOTE0MDYgMTU0LjQ4ODI4MSAxNzAuMTkxNDA2IDE0Ny43OTI5NjkgTCAxNzAuMTkxNDA2IDUyLjIxODc1IEMgMTcwLjE5MTQwNiA0NS41MjM0MzggMTY0Ljc2NTYyNSA0MC4wOTc2NTYgMTU4LjA3MDMxMiA0MC4wOTc2NTYgQyAxNTMuMjU3ODEyIDQwLjA5NzY1NiAxNDkuMTAxNTYyIDQyLjkwMjM0NCAxNDcuMTQ0NTMxIDQ2Ljk2ODc1IEwgMTAwLjAwNzgxMiAxMDkuMzcxMDk0IEwgNTIuODY3MTg4IDQ2Ljk2ODc1IEMgNTAuOTEwMTU2IDQyLjkwMjM0NCA0Ni43NTM5MDYgNDAuMDk3NjU2IDQxLjk0MTQwNiA0MC4wOTc2NTYgWiBNIDQxLjk0MTQwNiA0MC4wOTc2NTYgIi8+DTwvZz4NPC9zdmc+DQ==" alt="M" title="M" style="height: calc(100% - 4px); position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"> </div>
+<a href="javascript:gotop()">
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwcHQiIGhlaWdodD0iMjAwcHQiIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB2ZXJzaW9uPSIxLjEiPg08ZyBpZD0ic3VyZmFjZTEiPg08cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgc3R5bGU9ImZpbGw6cmdiKDc4LjQzMTM3MyUsOTkuMjE1Njg2JSw5Ni4wNzg0MzElKTtmaWxsLW9wYWNpdHk6MDtzdHJva2U6bm9uZTsiLz4NPHBhdGggc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYigxNy4yNTQ5MDIlLDcxLjc2NDcwNiUsODMuMTM3MjU1JSk7ZmlsbC1vcGFjaXR5OjE7IiBkPSJNIDQxLjk0MTQwNiA0MC4wOTc2NTYgQyAzNS4yNDYwOTQgNDAuMDk3NjU2IDI5LjgyMDMxMiA0NS41MjM0MzggMjkuODIwMzEyIDUyLjIxODc1IEwgMjkuODIwMzEyIDE0Ny43OTI5NjkgQyAyOS44MjAzMTIgMTU0LjQ4ODI4MSAzNS4yNDYwOTQgMTU5LjkxNDA2MiA0MS45NDE0MDYgMTU5LjkxNDA2MiBDIDQ4LjYzMjgxMiAxNTkuOTE0MDYyIDU0LjA2MjUgMTU0LjQ4ODI4MSA1NC4wNjI1IDE0Ny43OTI5NjkgTCA1NC4wNjI1IDg4Ljc2MTcxOSBMIDg5Ljg3ODkwNiAxMzYuMTc5Njg4IEMgOTIuMzU5Mzc1IDEzOS40NjA5MzggOTYuMTg3NSAxNDEuMTI1IDEwMC4wMDc4MTIgMTQwLjk4NDM3NSBDIDEwMy44MjgxMjUgMTQxLjEyNSAxMDcuNjU2MjUgMTM5LjQ2MDkzOCAxMTAuMTMyODEyIDEzNi4xNzk2ODggTCAxNDUuOTUzMTI1IDg4Ljc2MTcxOSBMIDE0NS45NTMxMjUgMTQ3Ljc5Mjk2OSBDIDE0NS45NTMxMjUgMTU0LjQ4ODI4MSAxNTEuMzc4OTA2IDE1OS45MTQwNjIgMTU4LjA3MDMxMiAxNTkuOTE0MDYyIEMgMTY0Ljc2NTYyNSAxNTkuOTE0MDYyIDE3MC4xOTE0MDYgMTU0LjQ4ODI4MSAxNzAuMTkxNDA2IDE0Ny43OTI5NjkgTCAxNzAuMTkxNDA2IDUyLjIxODc1IEMgMTcwLjE5MTQwNiA0NS41MjM0MzggMTY0Ljc2NTYyNSA0MC4wOTc2NTYgMTU4LjA3MDMxMiA0MC4wOTc2NTYgQyAxNTMuMjU3ODEyIDQwLjA5NzY1NiAxNDkuMTAxNTYyIDQyLjkwMjM0NCAxNDcuMTQ0NTMxIDQ2Ljk2ODc1IEwgMTAwLjAwNzgxMiAxMDkuMzcxMDk0IEwgNTIuODY3MTg4IDQ2Ljk2ODc1IEMgNTAuOTEwMTU2IDQyLjkwMjM0NCA0Ni43NTM5MDYgNDAuMDk3NjU2IDQxLjk0MTQwNiA0MC4wOTc2NTYgWiBNIDQxLjk0MTQwNiA0MC4wOTc2NTYgIi8+DTwvZz4NPC9zdmc+DQ==" alt="M" title="M" style="height: calc(100% - 4px); position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);"></a></div>
 <div class="top-line"></div>
+
+<a href="javascript:goto('int','60')" class="gotop" style="color:#333333;" id="gotop">回目錄</a>
+<script>
+$(window).scroll(function() {
+		if ( $(this).scrollTop() > ($('#int').offset().top-60) ){
+			$('#gotop').stop().animate({bottom: 25 + 'px' }, 333 );
+		} else {
+			$('#gotop').stop().animate({bottom: -100 + 'px' }, 333 );
+
+		}
+	}).scroll();
+</script>
